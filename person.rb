@@ -1,4 +1,7 @@
 require_relative 'nameable'
+require_relative 'decorator'
+require_relative 'capitalize_decorator'
+require_relative 'trimmer_decorator'
 
 class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
