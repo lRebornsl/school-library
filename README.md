@@ -49,6 +49,7 @@
 ### Key Features <a name="key-features"></a>
 
 - **Person, Student and Teacher classes**
+- **Add decorator design pattern**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
