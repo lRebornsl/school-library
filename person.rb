@@ -5,6 +5,7 @@ require_relative 'trimmer_decorator'
 
 class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = rand(1..100)
     @name = name
     @age = age
