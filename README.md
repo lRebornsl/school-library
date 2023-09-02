@@ -50,6 +50,7 @@
 
 - **Person, Student and Teacher classes**
 - **Add decorator design pattern**
+- **Add association between classes**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
