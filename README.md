@@ -48,9 +48,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Person, Student and Teacher classes**
-- **Add decorator design pattern**
-- **Add association between classes**
+- **Add new students or teachers**
+- **Add new books**
+- **Save records of who borrowed a given book and when**
+- **Add UI**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,7 +104,6 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Make a better UI.**
 - [ ] **Build new methods.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
