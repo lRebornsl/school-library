@@ -42,36 +42,44 @@ class App
     print 'Do you want to add a student (1) or a teacher (2)?'
     person_type = gets.chomp.to_i
     if person_type == 1
-      print 'Name: '
-      name = gets.chomp
-      print 'Age: '
-      age = gets.chomp.to_i
-      print 'Classroom: '
-      classroom_name = gets.chomp
-      classroom = Classroom.new(classroom_name)
-      print 'Has a parent permission? (Y/N)'
-      permission = gets.chomp.downcase
-      if permission == 'y'
-        @persons << Student.new(name, age, classroom)
-        puts 'Student created successfully'
-      elsif permission == 'n'
-        @persons << Student.new(name, age, classroom, parent_permission: false)
-        puts 'Student created successfully'
-      else
-        puts 'Invalid option'
-      end
+      add_student
     elsif person_type == 2
-      print 'Name: '
-      name = gets.chomp
-      print 'Age: '
-      age = gets.chomp.to_i
-      print 'Specialization: '
-      specialization = gets.chomp
-      @persons << Teacher.new(name, age, specialization)
-      puts 'Teacher created successfully'
+      add_teacher
     else
       puts 'Invalid option'
     end
+  end
+
+  def add_student
+    print 'Name: '
+    name = gets.chomp
+    print 'Age: '
+    age = gets.chomp.to_i
+    print 'Classroom: '
+    classroom_name = gets.chomp
+    classroom = Classroom.new(classroom_name)
+    print 'Has a parent permission? (Y/N)'
+    permission = gets.chomp.downcase
+    if permission == 'y'
+      @persons << Student.new(name, age, classroom)
+      puts 'Student created successfully'
+    elsif permission == 'n'
+      @persons << Student.new(name, age, classroom, parent_permission: false)
+      puts 'Student created successfully'
+    else
+      puts 'Invalid option'
+    end
+  end
+
+  def add_teacher
+    print 'Name: '
+    name = gets.chomp
+    print 'Age: '
+    age = gets.chomp.to_i
+    print 'Specialization: '
+    specialization = gets.chomp
+    @persons << Teacher.new(name, age, specialization)
+    puts 'Teacher created successfully'
   end
 
   def add_book
