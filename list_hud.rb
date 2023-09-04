@@ -1,12 +1,14 @@
 require_relative 'app'
 require_relative 'books_handler'
+require_relative 'rental_handler'
 
 class ListHud
   def initialize
     @app = App.new
     @books = BooksHandler.new
+    @rental_handler = RentalHandler.new(@app, @books)
   end
-  
+
   def display_options
     puts '1. List all books'
     puts '2. List all persons'
@@ -28,9 +30,9 @@ class ListHud
     when 4
       @books.add_book
     when 5
-      @app.rent_book
+      @rental_handler.rent_book
     when 6
-      @app.list_rentals
+      @rental_handler.list_rentals
     else
       puts 'Invalid choice'
     end
