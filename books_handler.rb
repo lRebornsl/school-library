@@ -1,6 +1,8 @@
 require_relative 'book'
 
 class BooksHandler
+  attr_reader :books
+
   def initialize
     @books = []
   end
@@ -14,7 +16,7 @@ class BooksHandler
     puts 'Book created successfully'
   end
 
-  def list_books  
+  def list_books
     @books.each do |book|
       puts "Title: #{book.title}, Author: #{book.author}"
     end
