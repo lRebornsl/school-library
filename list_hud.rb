@@ -1,8 +1,10 @@
 require_relative 'app'
+require_relative 'books_handler'
 
 class ListHud
   def initialize
     @app = App.new
+    @books = BooksHandler.new
   end
   
   def display_options
@@ -18,13 +20,13 @@ class ListHud
   def option(choice)
     case choice
     when 1
-      @app.list_books
+      @books.list_books
     when 2
       @app.list_persons
     when 3
       @app.add_person
     when 4
-      @app.add_book
+      @books.add_book
     when 5
       @app.rent_book
     when 6

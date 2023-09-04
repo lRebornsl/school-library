@@ -1,4 +1,3 @@
-require_relative 'book'
 require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
@@ -9,7 +8,6 @@ require_relative 'list_hud'
 class App
   def initialize
     @persons = []
-    @books = []
     @rentals = []
   end
 
@@ -21,12 +19,6 @@ class App
       list.option(choice)
       list.display_options
       choice = gets.chomp.to_i
-    end
-  end
-
-  def list_books
-    @books.each do |book|
-      puts "Title: #{book.title}, Author: #{book.author}"
     end
   end
 
@@ -82,15 +74,6 @@ class App
     specialization = gets.chomp
     @persons << Teacher.new(name, age, specialization)
     puts 'Teacher created successfully'
-  end
-
-  def add_book
-    print 'Title: '
-    title = gets.chomp
-    print 'Author: '
-    author = gets.chomp
-    @books << Book.new(title, author)
-    puts 'Book created successfully'
   end
 
   def rent_book
