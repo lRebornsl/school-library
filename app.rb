@@ -4,6 +4,7 @@ require_relative 'student'
 require_relative 'teacher'
 require_relative 'classroom'
 require_relative 'rental'
+require_relative 'list_hud'
 
 class App
   def initialize
@@ -13,11 +14,12 @@ class App
   end
 
   def run
-    display_options
+    list = ListHud.new
+    list.display_options
     choice = gets.chomp.to_i
     while choice != 7
-      option(choice)
-      display_options
+      list.option(choice)
+      list.display_options
       choice = gets.chomp.to_i
     end
   end
