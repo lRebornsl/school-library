@@ -1,6 +1,7 @@
 require_relative 'books_handler'
 require_relative 'rental_handler'
 require_relative 'persons_handler'
+require 'json'
 
 class App
   def initialize
@@ -10,12 +11,11 @@ class App
   end
 
   def run
-    display_options
-    choice = gets.chomp.to_i
-    while choice != 7
-      option(choice)
+    @persons.load_persons('./src/persons.json')
+    loop do
       display_options
       choice = gets.chomp.to_i
+      option(choice)
     end
   end
 
@@ -43,6 +43,11 @@ class App
       @rental_handler.rent_book
     when 6
       @rental_handler.list_rentals
+    when 7
+      @persons.save_persons('./src/persons.json')
+
+      puts 'Bye!'
+      exit
     else
       puts 'Invalid choice'
     end

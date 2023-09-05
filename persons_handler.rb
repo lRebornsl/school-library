@@ -51,4 +51,22 @@ class PersonsHandler
     @persons << Teacher.new(age, name, specialization)
     puts 'Teacher created successfully'
   end
+
+  def save_persons(filename)
+    File.write(filename, @persons.to_json)
+  end
+
+  def load_persons(filename)
+    if File.exist?(filename)
+      @persons = JSON.parse(File.read(filename)).map do |p|
+        if p['type'] == 'Student'
+          Student.new(p['age'], p['name'], p['parent_permission'])
+        elsif p['type'] == 'Teacher'
+          Teacher.new(p['age'], p['name'], p['specialization'])
+        end
+      end
+    else
+      File.write(filename, '[]')
+    end
+  end
 end
