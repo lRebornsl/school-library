@@ -38,7 +38,7 @@ class PersonsHandler
     classroom_name = InputHandler.get_string_input('Classroom: ')
     classroom = Classroom.new(classroom_name)
     permission = InputHandler.get_yes_no_input('Has a parent permission?')
-    
+
     @persons << Student.new(age, name, classroom, parent_permission: permission)
     puts 'Student created successfully'
   end
@@ -47,7 +47,7 @@ class PersonsHandler
     name = InputHandler.get_string_input('Name: ')
     age = InputHandler.get_integer_input('Age: ')
     specialization = InputHandler.get_string_input('Specialization: ')
-    
+
     @persons << Teacher.new(age, name, specialization)
     puts 'Teacher created successfully'
   end
