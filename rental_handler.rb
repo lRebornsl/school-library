@@ -1,10 +1,10 @@
 require_relative 'rental'
 
 class RentalHandler
-  def initialize(app, books)
+  def initialize(persons, books)
     @rentals = []
     @books = books.books
-    @persons = app.persons
+    @persons = persons.persons
   end
 
   def rent_book
