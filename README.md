@@ -98,6 +98,12 @@ Example command:
 - Twitter: [@RebornsDev](https://twitter.com/RebornsDev)
 - LinkedIn: [Anthony Vásquez](https://www.linkedin.com/in/avvm98/)
 
+👤 **Abdelaziz Mahdi**
+
+- GitHub: [@Abdelaziz-Mahdi](https://github.com/Abdelaziz-Mahdi)
+- Twitter: [@_AbdelazizMahdi](https://twitter.com/_AbdelazizMahdi)
+- LinkedIn: [in/abdelaziz-mahdi](https://www.linkedin.com/in/abdelaziz-mahdi)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
