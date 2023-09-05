@@ -1,14 +1,50 @@
-require_relative 'list_hud'
+require_relative 'books_handler'
+require_relative 'rental_handler'
+require_relative 'persons_handler'
 
 class App
+  def initialize
+    @books = BooksHandler.new
+    @persons = PersonsHandler.new
+    @rental_handler = RentalHandler.new(@persons, @books)
+  end
+
   def run
-    list = ListHud.new
-    list.display_options
+    display_options
     choice = gets.chomp.to_i
     while choice != 7
-      list.option(choice)
-      list.display_options
+      option(choice)
+      display_options
       choice = gets.chomp.to_i
+    end
+  end
+
+  def display_options
+    puts '1. List all books'
+    puts '2. List all persons'
+    puts '3. Create a person'
+    puts '4. Create a book'
+    puts '5. Create a rental'
+    puts '6. List all rentals for a given person id'
+    puts '7. Quit'
+  end
+
+  def option(choice)
+    case choice
+    when 1
+      @books.list_books
+    when 2
+      @persons.list_persons
+    when 3
+      @persons.add_person
+    when 4
+      @books.add_book
+    when 5
+      @rental_handler.rent_book
+    when 6
+      @rental_handler.list_rentals
+    else
+      puts 'Invalid choice'
     end
   end
 end

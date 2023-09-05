@@ -1,4 +1,5 @@
 require_relative 'book'
+require_relative 'input_handler'
 
 class BooksHandler
   attr_reader :books
@@ -8,10 +9,8 @@ class BooksHandler
   end
 
   def add_book
-    print 'Title: '
-    title = gets.chomp
-    print 'Author: '
-    author = gets.chomp
+    title = InputHandler.get_string_input('Title: ')
+    author = InputHandler.get_string_input('Author: ')
     @books << Book.new(title, author)
     puts 'Book created successfully'
   end
