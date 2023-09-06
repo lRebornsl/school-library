@@ -8,4 +8,8 @@ class Rental
     book.rentals << self unless book.rentals.include?(self)
     person.rentals << self unless person.rentals.include?(self)
   end
+
+  def to_json(*args)
+    { date: @date, book: @book, person: @person }.to_json(*args)
+  end
 end

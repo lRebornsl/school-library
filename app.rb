@@ -1,21 +1,30 @@
 require_relative 'books_handler'
 require_relative 'rental_handler'
 require_relative 'persons_handler'
+require 'json'
 
 class App
   def initialize
     @books = BooksHandler.new
     @persons = PersonsHandler.new
+    @persons.load_persons('./src/persons.json')
+    @books.load_books('./src/books.json')
     @rental_handler = RentalHandler.new(@persons, @books)
+    @rental_handler.load_rentals('./src/rentals.json')
   end
 
   def run
-    display_options
-    choice = gets.chomp.to_i
-    while choice != 7
-      option(choice)
+    loop do
       display_options
       choice = gets.chomp.to_i
+      if choice == 7
+        @persons.save_persons('./src/persons.json')
+        @books.save_books('./src/books.json')
+        @rental_handler.save_rentals('./src/rentals.json')
+        puts 'Bye!'
+        break
+      end
+      option(choice)
     end
   end
 

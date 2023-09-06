@@ -37,4 +37,20 @@ class RentalHandler
       end
     end
   end
+
+  def save_rentals(filename)
+    File.write(filename, @rentals.to_json)
+  end
+
+  def load_rentals(filename)
+    if File.exist?(filename)
+      @rentals = JSON.parse(File.read(filename)).map do |r|
+        book = @books.find { |b| b.title == r['book']['title'] }
+        person = @persons.find { |p| p.name == r['person']['name'] }
+        Rental.new(r['date'], book, person)
+      end
+    else
+      File.write(filename, '[]')
+    end
+  end
 end
