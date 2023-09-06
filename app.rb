@@ -7,12 +7,12 @@ class App
   def initialize
     @books = BooksHandler.new
     @persons = PersonsHandler.new
+    @persons.load_persons('./src/persons.json')
+    @books.load_books('./src/books.json')
     @rental_handler = RentalHandler.new(@persons, @books)
   end
 
   def run
-    @persons.load_persons('./src/persons.json')
-    @books.load_books('./src/books.json')
     loop do
       display_options
       choice = gets.chomp.to_i
