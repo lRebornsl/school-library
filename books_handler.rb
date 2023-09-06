@@ -20,4 +20,18 @@ class BooksHandler
       puts "Title: #{book.title}, Author: #{book.author}"
     end
   end
+
+  def save_books(filename)
+    File.write(filename, @books.to_json)
+  end
+
+  def load_books(filename)
+    if File.exist?(filename)
+      @books = JSON.parse(File.read(filename)).map do |b|
+        Book.new(b['title'], b['author'])
+      end
+    else
+      File.write(filename, '[]')
+    end
+  end
 end

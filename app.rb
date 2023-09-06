@@ -12,11 +12,13 @@ class App
 
   def run
     @persons.load_persons('./src/persons.json')
+    @books.load_books('./src/books.json')
     loop do
       display_options
       choice = gets.chomp.to_i
       if choice == 7
         @persons.save_persons('./src/persons.json')
+        @books.save_books('./src/books.json')
         puts 'Bye!'
         break
       end
