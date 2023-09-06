@@ -28,11 +28,11 @@ class Person < Nameable
     @rentals << Rental.new(date, book, self)
   end
 
-  def to_json(*)
+  def to_json(*args)
     if is_a? Student
-      { type: 'Student', name: @name, age: @age, parent_permission: @parent_permission, person_id: @id }.to_json(*)
+      { type: 'Student', name: @name, age: @age, parent_permission: @parent_permission, person_id: @id }.to_json(*args)
     elsif is_a? Teacher
-      { type: 'Teacher', name: @name, age: @age, person_id: @id }.to_json(*)
+      { type: 'Teacher', name: @name, age: @age, person_id: @id }.to_json(*args)
     end
   end
 
