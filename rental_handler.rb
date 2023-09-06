@@ -37,4 +37,10 @@ class RentalHandler
       end
     end
   end
+
+  def save_rentals(filename)
+    puts 'Saving rentals...'
+    puts @rentals.inspect
+    File.write(filename, @rentals.to_json)
+  end
 end

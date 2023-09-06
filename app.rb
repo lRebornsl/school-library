@@ -19,6 +19,7 @@ class App
       if choice == 7
         @persons.save_persons('./src/persons.json')
         @books.save_books('./src/books.json')
+        @rental_handler.save_rentals('./src/rentals.json')
         puts 'Bye!'
         break
       end
