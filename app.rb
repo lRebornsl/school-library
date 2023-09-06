@@ -15,6 +15,11 @@ class App
     loop do
       display_options
       choice = gets.chomp.to_i
+      if choice == 7
+        @persons.save_persons('./src/persons.json')
+        puts 'Bye!'
+        break
+      end
       option(choice)
     end
   end
@@ -43,11 +48,6 @@ class App
       @rental_handler.rent_book
     when 6
       @rental_handler.list_rentals
-    when 7
-      @persons.save_persons('./src/persons.json')
-
-      puts 'Bye!'
-      exit
     else
       puts 'Invalid choice'
     end
