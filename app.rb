@@ -10,6 +10,7 @@ class App
     @persons.load_persons('./src/persons.json')
     @books.load_books('./src/books.json')
     @rental_handler = RentalHandler.new(@persons, @books)
+    @rental_handler.load_rentals('./src/rentals.json')
   end
 
   def run

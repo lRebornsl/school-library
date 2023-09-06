@@ -12,6 +12,6 @@ class Book
   end
 
   def to_json(*args)
-    { title: @title, author: @author, rentals: @rentals.map(&:to_json) }.to_json(*args)
+    { title: @title, author: @author, book_id: Random.rand(1..1000) }.to_json(*args)
   end
 end
