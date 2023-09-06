@@ -52,6 +52,7 @@
 - **Add new books**
 - **Save records of who borrowed a given book and when**
 - **Add UI**
+- **Preserve data data in files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
