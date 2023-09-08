@@ -53,6 +53,7 @@
 - **Save records of who borrowed a given book and when**
 - **Add UI**
 - **Preserve data data in files**
+- **Add unit tests for all the methods in all the classes**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
